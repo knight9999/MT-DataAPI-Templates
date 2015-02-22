@@ -57,16 +57,13 @@ For third party codes, read the following licenses.
 
 ## Third party codes and licenses.
 
-Bootstrap 3.0 is a third-party library released under an MIT License.
-
+Bootstrap 3.0 is a third-party library released under an MIT License.  
 See http://getbootstrap.com/getting-started/#license-faqs.
 
-jQuery 1.10.2 is a third-party library released under an MIT License.
-
+jQuery 1.10.2 is a third-party library released under an MIT License.  
 See https://jquery.org/license/.
 
-mt-data-api.(min.)js is a third-party library released under an MIT License.
-
+mt-data-api.(min.)js is a third-party library released under an MIT License.  
 See mt-data-api.js comments which reads
 
  * Movable Type DataAPI SDK for JavaScript v1
