@@ -1,0 +1,32 @@
+.loginform {
+	margin-top: 10px;
+}
+
+.selecttemplate {
+	margin-top: 10px;
+}
+
+.loadtemplatebtn {
+	margin-top: 20px;
+}
+
+.templatelink {
+	cursor: pointer;
+}
+
+.templatelink:hover {
+	background-color:#428bca;
+	color:#ffffff;	
+}
+
+.result {
+	margin-top: 10px;
+}
+
+.detailtemplate {
+	margin-top: 10px;
+}
+
+.updatetemplatebtn {
+	margin-top: 20px;
+}

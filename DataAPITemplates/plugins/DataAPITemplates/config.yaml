@@ -1,0 +1,85 @@
+id: DataAPITemplates
+name: DataAPITemplates
+version: 1.0
+author_link: http://d.hatena.ne.jp/knight_9999/
+doc_link: https://github.com/knight9999/MT-DataAPI-Templates/blob/master/README.md
+author_name: <__trans phrase="Kenichi Naito">
+description: <__trans phrase="Data API Extension to operate templates">
+l10n_class: DataAPITemplates::L10N
+
+applications:
+  data_api:
+    resources:
+      template:
+        fields:
+          - name: blog_id
+          - name: id
+          - name: name
+          - name: type
+          - name: text
+          - name: build_dynamic
+          - name: build_interval
+          - name: build_type
+          - name: created_by
+          - name: created_on
+          - name: modified_by
+          - name: modified_on
+          - name: identifier
+          - name: outfile
+          - name: rebuild_me
+          - name: current_revision
+          - name: maps
+            from_object: $DataAPITemplates::DataAPITemplates::EndPoint::Template::templateMapListFromObject
+            to_object: $DataAPITemplates::DataAPITemplates::EndPoint::Template::templateMapListToObject
+#            to_object_default: 0
+        updatable_fields:
+          - name: name
+          - name: type
+          - name: text
+          - name: maps
+      templatemap:
+        fields:
+          - name: archive_type
+          - name: build_interval
+          - name: build_type
+          - name: file_template
+          - name: is_preferred
+        updatable_fields:
+          - name: archive_type
+          - name: build_interval
+          - name: build_type
+          - name: file_template
+          - name: is_preferred
+    endpoints:
+      - id: donut_list_templates
+        route: /sites/:site_id/donut/templates
+        verb: GET
+        version: 1
+#        default_params:
+#          offset: 0
+#          limit: 3
+        handler: $DataAPITemplates::DataAPITemplates::EndPoint::Template::list
+#        handler: $DataAPITemplates::DataAPITemplates::EndPoint::Entry::list_templates
+#       requires_login: 1
+      - id: donut_template
+        route: /sites/:site_id/donut/template/:template_id
+        verb: GET
+        version: 1
+        handler: $DataAPITemplates::DataAPITemplates::EndPoint::Template::get
+#        handler: $DataAPITemplates::DataAPITemplates::EndPoint::Entry::show_template
+#       requires_login: 1
+      - id: donut_create_template
+        route: /sites/:site_id/donut/templates
+        verb: POST
+        version: 1
+        handler: $DataAPITemplates::DataAPITemplates::EndPoint::Template::create
+      - id: donut_update_template
+        route: /sites/:site_id/donut/template/:template_id
+        verb: PUT
+        version: 1
+        handler: $DataAPITemplates::DataAPITemplates::EndPoint::Template::update
+        
+callbacks:
+  data_api_list_permission_filter.template: $DataAPITemplates::DataAPITemplates::Callback::Template::can_list
+  data_api_view_permission_filter.template: $DataAPITemplates::DataAPITemplates::Callback::Template::can_view
+
