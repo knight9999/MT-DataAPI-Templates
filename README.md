@@ -2,6 +2,14 @@
 
 # Usage (Japanese only)
 
+## Target
+
+ MT 6.0.x系で動作します。
+
+ MT 6.1での動作は未確認です。MT 6.1では、DataAPI 2.0によりほぼ同等の機能が実装されて
+ いますので、そちらをご利用下さい。（APIエンドポイントおよびjsonの構造は、本プラグイン
+ のものと互換性はありません）
+
 ## Install
 
 インストール方法
@@ -36,6 +44,7 @@ http://xxx/mt-static/plugins/DataAPITemplates/index.html
  テンプレート更新
  method : PUT
  route : /sites/:site_id/donut/template/:template_id
+
 
 # License
 
